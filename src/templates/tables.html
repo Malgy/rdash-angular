@@ -1,42 +1,67 @@
+<!-- This is the events page (even though the name is called tables...) -->
+
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-16"> <!-- Changes the width of the page -->
+    <!--
+    Filtering: by most recent ID (numerical), by building (only show those of choice buidling), keyword search???
+    -->
+
+    <!-- Single button with keyboard nav -->
+    <div class="btn-group" uib-dropdown keyboard-nav>
+        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-primary" uib-dropdown-toggle>
+            Filter <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li role="menuitem"><a href="#">Recent Events First (first 10?)</a></li>
+            <li role="menuitem"><a href="#">Oldest Events First (last 10?)</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+    <label>Search for: <input ng-model="searchText"></label>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <rd-widget>
-      <rd-widget-header icon="fa-tasks" title="Servers">
+      <rd-widget-header icon="fa-calendar-check-o" title="Events" class="text-right"> <!-- The manage found at top right, is now centered to the right -->
+
         <a href="#">Manage</a>
       </rd-widget-header>
       <rd-widget-body classes="medium no-padding">
         <div class="table-responsive">
           <table class="table">
+            <!-- This won't be hard code... Instead, make work with the MongoDB database -->
+            <thead>
+							<tr><th>ID</th><th>Building</th><th>Floor</th><th>Room</th><th>Title</th><th>Description</th><th>Time</th></tr>
+						</thead>
             <tbody>
-              <tr><td>Fucking</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Ass</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Tits</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-              <tr><td>Fuck</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Cock</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Cunt</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Bitch</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
-              <tr><td>Bullocks</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Tittays</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
-              <tr><td>Cuck</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
-              <tr><td>Hi</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+              <tr><td>1</td><td>NAAB</td><td>2</td><td>207</td><td>Code Samurai Talk</td><td>Today's hosts: Dr. Huang and Luigi - discussing IDEs and GUIs</td><td>4:00pm - 4:30pm</td></tr>
+              <tr><td>2</td><td>NAAB</td><td>2</td><td>205</td><td>Big Data Talk</td><td>Google visit from Dr. Felten, Sr. Data Analyst</td><td>3:30pm - 4:15pm</td></tr>
+              <tr><td>3</td><td>STEM</td><td>4</td><td>411</td><td>Biology Group Meeting</td><td>Discussions include research day 2017</td><td>3:30pm - 4:15pm</td></tr>
+              <tr><td>4</td><td>GLAB</td><td>5</td><td>501</td><td>Designer Central Discussion</td><td>Hosted by Dr. Gonella introducing Adobe 2017</td><td>3:30pm - 4:15pm</td></tr>
+              <tr><td>5</td><td>STEM</td><td>3</td><td>309</td><td>Chemistry and Romance Meeting</td><td>(Alert for no description?)</td><td>3:30pm - 4:15pm</td></tr>
+              <tr><td>6</td><td>NAAB</td><td>2</td><td>206</td><td>ACM Meeting</td><td>Hosted by Luigi and Jon, new coding challenges in Slack group</td><td>3:30pm - 4:15pm</td></tr>
             </tbody>
           </table>
         </div>
       </rd-widget-body>
       <rd-widget-footer>
-        <ul class="pagination pagination-sm pull-right">
+        <ul class="pagination pagination-sm pull-right"> <!-- This is hardcoded next-previous pages... ew lol -->
           <li><a href="#">&laquo;</a></li>
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
           <li><a href="#">&raquo;</a></li>
         </ul>
         <div class="clearfix"></div>
       </rd-widget-footer>
     </rd-widget>
   </div>
+<!--
   <div class="col-lg-6">
     <rd-widget>
       <rd-widget-header icon="fa-tasks" title="Striped Servers">
@@ -73,4 +98,5 @@
       </rd-widget-footer>
     </rd-widget>
   </div>
+-->
 </div>

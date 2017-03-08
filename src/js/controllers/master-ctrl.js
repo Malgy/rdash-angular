@@ -2,7 +2,8 @@
  * Master Controller
  */
 
-angular.module('RDash')
+angular
+    .module('RDash')
     .controller('MasterCtrl', ['$scope', '$cookieStore', MasterCtrl]);
 
 function MasterCtrl($scope, $cookieStore) {
